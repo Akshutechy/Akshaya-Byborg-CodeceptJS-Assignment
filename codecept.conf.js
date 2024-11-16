@@ -13,11 +13,12 @@ exports.config = {
   helpers: {
     Playwright: {
       browser: 'chromium',
-      url: 'https://www.oranum.com/',
-      show: true
+      url: 'https://www.oranum.com',
+      show: true,
+      waitForTimeout: 30000
     }
   },
-  timeout: 60,
+  timeout : 60000,
   gherkin: {
     features: './tests/features/*.feature',
     steps: './tests/step_definitions/*.js',
