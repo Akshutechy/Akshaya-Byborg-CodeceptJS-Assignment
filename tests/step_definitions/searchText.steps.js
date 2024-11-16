@@ -1,25 +1,21 @@
 const { I } = inject();
+const homePage = require('../pages/homePage');
 
 Given('User is on the oranum home page', async() => {
   I.amOnPage('/');
-  I.seeElement('//button[contains(text(), "Accept Cookies")]');
-  I.click('//button[contains(text(), "Accept Cookies")]');
+  await homePage.clickAcceptCookies();
 });
 
-When('User searches the pshycics with {string} text', (word) => {
-  I.seeElement('.toolbar-search-input');
-  I.click('.toolbar-search-input');
-  I.fillField('.toolbar-search-input', word);
+When('User searches the pshycics with {string} text', async(word) => {
+  await homePage.fillTextInExpertOrCategorySearchBar(word);
 });
 
-Then('User should be displayed with search results matching the partial searched text {string}', (word) => {
-  //  Validating the results
+Then('User should be displayed with search results matching the partial searched text {string}', async(word) => {
   const formattedWord = word.charAt(0).toUpperCase()+word.slice(1);
-  I.see(formattedWord, 'ul.autosuggest .toolbar-autosuggest-suggestion');
+  await homePage.validateSearchResultText(formattedWord);
 });
 
-Then('User should be displayed with search results matching specific psychic only {string}', (word) => {
-  //  Validating the results
-  I.see(word, 'ul.autosuggest .toolbar-autosuggest-suggestion');
-  I.seeNumberOfElements('li.toolbar-autosuggest-row',1)
+Then('User should be displayed with search results matching specific psychic only {string}', async(word) => {
+  await homePage.validateSearchResultText(word);
+  await homePage.compareSearchResultCount(1);
 });
