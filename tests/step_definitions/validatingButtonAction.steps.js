@@ -1,23 +1,16 @@
 const { I } = inject();
+const homePage = require('../pages/homePage');
+const livePsychicPage = require('../pages/livePsychicPage');
+const {expect} = require('chai');
 
 When('User opens the live pshycic', async () => {
-  const psychicCount = await I.grabNumberOfVisibleElements("//div[@class='swiper-wrapper']/article");
-
-  for (let i = 1; i <= psychicCount; i++) {
-    const psychicLiveStatus = await I.grabAttributeFrom(`//div[@class='swiper-wrapper']/article[${i}]`, 'data-status');
-    if (psychicLiveStatus == 1) {
-      const tileButton = `//div[@class='swiper-wrapper']/article[${i}]/a`;
-      I.click(tileButton);
-      break;
-    }
-  }
+  await homePage.selectLivePsychic();
 });
 
 When('User clicks on gift inside button', async () => {
-  I.waitForElement('div[data-testid="promoCoin"]')
-  I.click('div[data-testid="promoCoin"]');
+  await livePsychicPage.clickGiftButton();
 });
 
 Then('User should be displayed with sign up overlay box', async () => {
-  I.seeElement('.mc_dialog--log_in');
+  expect(await livePsychicPage.getSignUpBoxCount()).equal(1);
 });

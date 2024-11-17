@@ -8,7 +8,11 @@ class HomePage {
     this.sessionTypeButton = 'label[for="filter4"]',
     this.liveExpertsButton = '//a[contains(text(),"Live Experts")]',
     this.searchResultText = 'ul.autosuggest .toolbar-autosuggest-suggestion',
-    this.searchResultCount = 'li.toolbar-autosuggest-row'
+    this.searchResultCount = 'li.toolbar-autosuggest-row',
+    this.psychicTiles = '//div[@class="swiper-wrapper"]/article',
+    this.specificPsychicTile = (psychicNumber)=> `//div[@class='swiper-wrapper']/article[${psychicNumber}]`,
+    this.psychicDataStatus = 'data-status',
+    this.livePsychicTile = (psychicNumber)=>`//div[@class='swiper-wrapper']/article[${psychicNumber}]/a`
   }
   // insert your methods here
   async clickAcceptCookies(){
@@ -37,14 +41,26 @@ class HomePage {
     await I.click(this.liveExpertsButton);
   }
 
-  async validateSearchResultText(inputText){
-    await I.see(inputText, this.searchResultText);
+  async getSearchResultText(){
+    return await I.grabTextFrom(this.searchResultText);
   }
 
-  async compareSearchResultCount(expectedElementCount){
-    await I.seeNumberOfElements(this.searchResultCount,expectedElementCount);
+  async getSearchResultCount(){
+    return await I.grabNumberOfVisibleElements(this.searchResultCount);
   }
 
+  async selectLivePsychic(){
+    const psychicCount = await I.grabNumberOfVisibleElements(this.psychicTiles);
+
+  for (let i = 1; i <= psychicCount; i++) {
+    const psychicLiveStatus = await I.grabAttributeFrom(this.specificPsychicTile(i), this.psychicDataStatus);
+    if (psychicLiveStatus == 1) {
+      const tileButton = this.livePsychicTile(i);
+      I.click(tileButton);
+      break;
+    }
+  }
+  }
 
 }
 
