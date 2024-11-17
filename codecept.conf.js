@@ -17,7 +17,7 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'https://www.oranum.com',
-      show: true,
+      show: false,
       waitForTimeout: 60000,
       timeout: 120000
     }

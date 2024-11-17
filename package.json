@@ -12,7 +12,7 @@
     "posttest":"npm run serve:reports && npm run openreport",
     "test": "npm run execute:script || npm run posttest",
     "dockerRun": "docker-compose -f docker-compose.yml up",
-    "test-docker": "npm run dockerRun && npm run openreport"
+    "test-docker": "npm run dockerRun"
   },
   "keywords": [],
   "author": "",
