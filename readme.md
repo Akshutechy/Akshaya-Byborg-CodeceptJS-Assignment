@@ -26,7 +26,7 @@ Automated following scenarios of the Oranum(https://www.oranum.com/) website
  - In the VS code terminal execute the command `npm run test` This will execute all the tests locally in the Chromium browser in the headless mode.
  - Once the test execution is completed the Allure Report will be generated and the Report will be automatically  opened in the default browser
 
-![](readmeImages\allureReport.png)
+![](readmeImages/allureReport.png)
 
 ## Running Test inside Docker
 
