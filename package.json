@@ -8,11 +8,12 @@
     "serve:reports": "allure serve output",
     "openreport": "npm run open:reports",
     "pretest": "npm run clean:reports",
-    "execute:script":"cross-env ENABLE_PLUGIN=true npx codeceptjs run",
-    "posttest":"npm run serve:reports && npm run openreport",
+    "execute:script": "cross-env ENABLE_PLUGIN=true npx codeceptjs run",
+    "posttest": "npm run serve:reports && npm run openreport",
     "test": "npm run execute:script || npm run posttest",
+    "test:docker": "npm run execute:script || npm run posttest",
     "dockerRun": "docker-compose -f docker-compose.yml up",
-    "test-docker": "npm run dockerRun"
+    "docker": "npm run dockerRun"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,7 @@
     "@types/chai": "^5.0.1",
     "allure-commandline": "^2.32.0",
     "cross-env": "^7.0.3",
+    "jsdoc": "^4.0.4",
     "mkdirp": "^3.0.1",
     "rimraf": "^6.0.1"
   }

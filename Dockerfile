@@ -22,4 +22,4 @@ RUN apt-get update && \
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 # Command to run Codecept tests and serve Allure report
-CMD ["npm", "test", "&&", "allure", "generate", "output/allure-results", "--clean", "&&", "npx", "http-server", "output/allure-report", "-p", "80"]
+CMD ["npm", "test:docker"]
