@@ -14,7 +14,11 @@ class HomePage {
     this.psychicDataStatus = 'data-status',
     this.livePsychicTile = (psychicNumber)=>`//div[@class='swiper-wrapper']/article[${psychicNumber}]/a`
   }
-  // insert your methods here
+ 
+  async navigateToHomePage(){
+    await I.amOnPage('/');
+  }
+
   async clickAcceptCookies(){
     await I.waitForVisible(this.acceptCookiesButton);
     await I.click(this.acceptCookiesButton);

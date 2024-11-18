@@ -3,7 +3,7 @@ const homePage = require('../pages/homePage');
 const {expect} = require('chai');
 
 Given('User is on the oranum home page', async() => {
-  I.amOnPage('/');
+  await homePage.navigateToHomePage();
   await homePage.clickAcceptCookies();
 });
 

@@ -8,7 +8,6 @@ class LiveExpertsPage {
     this.dataStatusAttribute = 'data-status',
     this.imageAttribute = 'src'
   }
-  // insert your methods here
 
   async isPsychicNamesUnique(){
     await I.waitForVisible(this.psychicNameText);
