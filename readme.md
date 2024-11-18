@@ -39,10 +39,11 @@ Automated following scenarios of the Oranum(https://www.oranum.com/) website
  
  - Project document is available in the `docs/index.html`
  
- ![](readMeImages/documentation1.png)
- ![](readMeImages/documentation2.png)
+ ![](readMeImages/documentation.png)
 
 ## Access Documentation online
 
-- To access online documentation please check [![Documentation](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://akshutechy.github.io/Akshaya-Byborg-CodeceptJS-Assignment/)
+- To access online documentation please check below link
+ 
+    [![Documentation](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://akshutechy.github.io/Akshaya-Byborg-CodeceptJS-Assignment/)
 
