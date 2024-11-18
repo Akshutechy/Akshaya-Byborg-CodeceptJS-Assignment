@@ -33,4 +33,4 @@ Automated following scenarios of the Oranum(https://www.oranum.com/) website
  - As prerequisite need to have the docker installed in the machine.
  - Docker desktop should be running actively
  - In the VS code terminal execute the command `npm run docker` This will first create a new docker image and then will spin up a container with that image and execute all the tests in headless mode.
- - Once the test execution is completed inside the Docker ->  Container will be automatically closed. And the Allure Report will be generated and the Report will be automatically opened in the default browser.
+ - Once the test execution is completed inside the Docker ->  To open the report in the host machine run the command `npm run serve:reports`

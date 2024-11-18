@@ -27,8 +27,11 @@
     "@types/chai": "^5.0.1",
     "allure-commandline": "^2.32.0",
     "cross-env": "^7.0.3",
+    "handlebars": "^4.7.8",
     "jsdoc": "^4.0.4",
+    "minami": "^1.2.3",
     "mkdirp": "^3.0.1",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "taffydb": "^2.7.3"
   }
 }

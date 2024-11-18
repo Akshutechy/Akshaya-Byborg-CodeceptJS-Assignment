@@ -1,0 +1,22 @@
+{
+    "tags": {
+      "allowUnknownTags": true
+    },
+    "source": {
+      "include": ["./tests/pages"],
+      "includePattern": ".+\\.js$",
+      "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+      "destination": "./docs",
+      "recurse": true,
+      "encoding": "utf8",
+      "readme": "./readme.md",
+      "template": "./node_modules/minami"
+    },
+    "templates": {
+      "default": {
+        "outputSourceFiles": false
+      }
+    }
+  }
